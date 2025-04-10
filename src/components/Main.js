@@ -14,7 +14,7 @@ function Main() {
   return (
     <div className="app">
       <Navbar/>
-      <h1 className="title">Our Menu</h1>
+      {/* <h1 className="title">Our Menu</h1> */}
       <div className="menu-grid">
         {menuItems.map(item => (
           <MenuCard key={item.id} item={item} />

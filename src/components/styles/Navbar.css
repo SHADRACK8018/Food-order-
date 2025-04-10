@@ -18,10 +18,10 @@
   
   .sidebar {
     position: fixed;
-    left: -250px;
+    left: -350px;
     top: 0;
     height: 100%;
-    width: 250px;
+    width: 350px;
     background-color: rgba(25, 255, 255, 0.9);
     background-size: cover;
     transition: left 0.3s ease;
@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     color: black;
+    font-size: 25px;
   }
   
   .sidebar h2 {
@@ -52,7 +53,16 @@
   .sidebar li {
     padding: 10px 0;
   }
-  
+  .sidebar button {
+    margin-top: 600px;
+    padding: 10px;
+    background-color: rgb(3, 165, 187);
+  }
+
+  .sidebar button:hover{
+    background-color: aliceblue;
+  }
+
   .sidebar .close-btn {
     font-size: 30px;
     color: black;
@@ -64,3 +74,54 @@
     background-color: rgba(34, 92, 89, 0.2);
   }
   
+  .navbar-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff6600;
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+  }
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+
+  .cart-button {
+    position: relative;
+    background-color: transparent;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ff6600;
+    font-size: 30px;
+  }
+  
+  .cart-button .cart-text {
+    display: none; 
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff6600;
+    padding: 2px 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+  }
+  
+  .cart-button:hover .cart-text {
+    display: inline-block;
+  }
+  
+  .cart-button:hover {
+    color: #be1414;
+  }
