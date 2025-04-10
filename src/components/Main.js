@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 import './styles/Main.css';
 import MenuCard from './MenuCard';
+import Navbar from './Navbar';
 
 const menuItems = [
   { id: 1, name: 'Chicken Burger', price: 10.992 },
@@ -12,6 +13,7 @@ const menuItems = [
 function Main() {
   return (
     <div className="app">
+      <Navbar/>
       <h1 className="title">Our Menu</h1>
       <div className="menu-grid">
         {menuItems.map(item => (
