@@ -1,5 +1,6 @@
 import './styles/Cart.css';
 import React from 'react';
+// import CartContext from './CartContext'
 
 
 const Cart = ({ isOpen, onClose }) => {

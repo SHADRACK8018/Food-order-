@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import ReactDOM from 'react-dom/client';
 import './styles/Main.css';
 import MenuCard from './MenuCard';
 import Navbar from './Navbar';
 
-const menuItems = [
-  { id: 1, name: 'Chicken Burger', price: 10.992 },
-  { id: 2, name: 'Veggie Pizza', price: 12.495 },
-  { id: 3, name: 'Beef Tacos', price: 9.999 },
-];
+const Main = () => {
+  const [menuItem, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-function Main() {
-  return (
+  useEffect(() => {
+    fetch('http://localhost:3001/menu')
+      .then((res) => res.json())
+      .then((data) => {
+        setMenuItems(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching posts:', error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+
+return (
     <div className="app">
       <Navbar/>
       {/* <h1 className="title">Our Menu</h1> */}
       <div className="menu-grid">
-        {menuItems.map(item => (
+        {menuItem.map(item => (
           <MenuCard key={item.id} item={item} />
         ))}
       </div>
