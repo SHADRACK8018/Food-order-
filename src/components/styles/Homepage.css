@@ -26,11 +26,28 @@
 
     display: block;
   }
+
+  .header {
+    position: relative;
+    background-color: #333;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff6600;
+    font-family: 'Arial', sans-serif;
+    padding: 1px;
+  }
   
   .auth-buttons {
-
-    position: absolute ;
-    top: 4px;
+    position: absolute;
+    margin: 10px;
+    top: 8px;
     right: 20px;
     z-index: 10;
   }
@@ -38,15 +55,15 @@
   .auth-buttons button {
     margin-right: 10px;
     padding: 8px 16px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: black;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
   }
   
   .auth-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #ff6600;
   }
   
 
@@ -56,6 +73,7 @@
     left: 50%;
     transform: translate(-50%, -50%) ;
     text-align: center;
+    padding-top: 70px;
     z-index: 1;
 
   }
@@ -87,7 +105,7 @@
 
   h1{
     position: absolute;    
-    top: 200px;             
+    top: 300px;             
     left: 50%;            
     transform: translateX(-50%);  
     color: black;       

@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 // import Help from './components/Help';
 import './styles/Navbar.css';
+import Cart from './Cart'
 import { FaBars, FaSearch, FaShoppingCart,  FaHeart, FaWallet, FaQuestionCircle, FaShoppingBag  } from 'react-icons/fa';
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,12 +67,16 @@ const Navbar = () => {
       <FaSearch className="search-icon" onClick={handleSearchSubmit} />
     </div>
   </div>
-  <button className="cart-button">
-    <FaShoppingCart />
-    <span className="cart-text">Cart</span>
-  </button>
-
-
+  <div>
+    <button className="cart-button" onClick={()=> setIsCartOpen(true)}>
+      <FaShoppingCart />
+      <span className="cart-text">Cart</span>
+    </button>
+    <Cart
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+      />
+  </div>
 </div>
   );
 };
