@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Main from './components/Main'; 
+import Help from './components/Help';
+
 
 function App() {
   const [showForm, setShowForm] = useState(null);
@@ -22,6 +24,8 @@ function App() {
           }
         />
         <Route path="/landing" element={<Main />} />
+        <Route path="/help" element={<Help />} />
+
       </Routes>
     </Router>
   );

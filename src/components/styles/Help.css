@@ -1,0 +1,49 @@
+/* styles/Help.css */
+
+.help-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .help-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .help-section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .help-section h3 {
+    font-size: 18px;
+    cursor: pointer;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .help-section h3:hover {
+    color: #007bff;
+  }
+  
+  .help-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  .help-section ul li {
+    margin-bottom: 8px;
+  }
+  

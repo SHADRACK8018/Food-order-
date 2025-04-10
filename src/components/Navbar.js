@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import Help from './components/Help';
 import './styles/Navbar.css';
 import { FaBars, FaSearch, FaShoppingCart,  FaHeart, FaWallet, FaQuestionCircle, FaShoppingBag  } from 'react-icons/fa';
 
@@ -33,10 +35,10 @@ const Navbar = () => {
         ×
       </span>
       <ul>
-        <li><FaShoppingBag /> <a className="menu-item" href="/orders">Orders</a></li>
-        <li><FaHeart /> <a className="menu-item" href="/favorites">Favorites</a></li>
-        <li><FaWallet /> <a className="menu-item" href="/wallet">Wallet</a></li>
-        <li><FaQuestionCircle /> <a className="menu-item" href="/help">Help</a></li>
+        <li><FaShoppingBag /> <Link className="menu-item" href="/orders">Orders</Link></li>
+        <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
+        <li><FaWallet /> <Link className="menu-item" href="/wallet">Wallet</Link></li>
+        <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
       </ul>
       <button className="signout" onClick={()=>{
             localStorage.removeItem("user");
