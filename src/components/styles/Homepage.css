@@ -1,0 +1,98 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: sans-serif;
+  }
+  
+
+  .home {
+
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+  }
+  
+  .home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+
+    display: block;
+  }
+  
+  .auth-buttons {
+
+    position: absolute ;
+    top: 4px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  .auth-buttons button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .auth-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    text-align: center;
+    z-index: 1;
+
+  }
+  
+  .overlay input {
+    padding: 12px 20px;
+    width: 300px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .overlay button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .overlay button:hover {
+    background-color: #e65c00;
+  }
+
+  h1{
+    position: absolute;    
+    top: 200px;             
+    left: 50%;            
+    transform: translateX(-50%);  
+    color: black;       
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 3rem;       
+    z-index: 1;    
+  }
+  
