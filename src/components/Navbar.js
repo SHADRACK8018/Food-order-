@@ -33,23 +33,27 @@ const Navbar = () => {
       </button>
 
   <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-    <div className="sidebar-content">
-      <span className="close-btn" onClick={toggleSidebar}>
-        ×
-      </span>
-      <ul>
-        <li><FaShoppingBag /> <Link className="menu-item" href="/orders">Orders</Link></li>
-        <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
-        <li><FaWallet /> <Link className="menu-item" href="/wallet">Wallet</Link></li>
-        <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
-      </ul>
-      <button className="signout" onClick={()=>{
-            localStorage.removeItem("user");
-            navigate("/");
-          }
-            }>Sign Out</button>
+        <div className="sidebar-header">
+            <span className="close-btn" onClick={toggleSidebar}>
+            ✖
+            </span>
+        </div>
+        <div className='sidebar-body'>
+            <ul>
+                <li><FaShoppingBag /> <Link className="menu-item" href="/orders">Orders</Link></li>
+                <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
+                <li><FaWallet /> <Link className="menu-item" href="/wallet">Wallet</Link></li>
+                <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
+            </ul>
+        </div>
+      <div className="sidebar-footer">
+        <button className="signout" onClick={()=>{
+                localStorage.removeItem("user");
+                navigate("/");
+            }
+                }>Sign Out</button>
+       </div>
   
-    </div>
   </div>
   
   <div className="navbar-title">BiteGo</div>

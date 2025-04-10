@@ -39,6 +39,10 @@
     cursor: pointer;
     color: #ff6600;
   }
+  .cart-header button:hover{
+    color: #be1414;
+  }
+  
   
 .cart-body {
     flex-grow: 1;
@@ -77,6 +81,6 @@
     transition: background 0.2s ease-in-out;
 }
   
-.checkout-btn:hover {
-    background-color: #04a85a;
+.checkout-button:hover {
+    background-color: #be1414;
 }
