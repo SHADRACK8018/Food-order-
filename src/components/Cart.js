@@ -1,9 +1,29 @@
 import './styles/Cart.css';
-import React from 'react';
-// import CartContext from './CartContext'
-
+import React, { useContext, useEffect, useState } from 'react';
+import CartCard from './CartCard'
+import { CartContext, CartContextProvider } from './CartContext';
 
 const Cart = ({ isOpen, onClose }) => {
+  const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const { cartItems } = useContext(CartContext)
+
+  useEffect(() => {
+      fetch('http://localhost:3001/menu')
+        .then((res) => res.json())
+        .then((data) => {
+          setMenuItems(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching posts:', error);
+          setLoading(false);
+        });
+    }, []);
+  
+    if (loading) return <p>Loading...</p>;
+ 
   return (
     <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
       <div className="cart-header">
@@ -12,8 +32,10 @@ const Cart = ({ isOpen, onClose }) => {
       </div>
 
       <div className="cart-body">
-        {/* You can add your cart form or items here */}
-        <p>This is your cart. Add form fields or items here.</p>
+      {menuItems.map(item => {
+        if (cartItems[item.id] != 0){
+          return <CartCard key={item.id} item={item} />
+        }})}
       </div>
       
       <div className = "cart-footer">
