@@ -4,6 +4,7 @@ import Homepage from './components/Homepage';
 import Main from './components/Main'; 
 import Cart from './components/Cart';
 import Help from './components/Help';
+import { CartContext, CartContextProvider } from './components/CartContext';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [registeredUser, setRegisteredUser] = useState(null); 
 
   return (
+    <CartContextProvider>
     <Router>
       <Routes>
         <Route
@@ -30,6 +32,7 @@ function App() {
 
       </Routes>
     </Router>
+    </CartContextProvider>
   );
 }
 
