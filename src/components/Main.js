@@ -2,7 +2,8 @@ import React from 'react';
 // import ReactDOM from 'react-dom/client';
 import './styles/Main.css';
 import MenuCard from './MenuCard';
-import Navbar from './Navbar';
+import Navbar from './Navbar'
+import Footer from './Footer';
 
 const menuItems = [
   { id: 1, name: 'Chicken Burger', price: 10.992 },
@@ -20,6 +21,7 @@ function Main() {
           <MenuCard key={item.id} item={item} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
