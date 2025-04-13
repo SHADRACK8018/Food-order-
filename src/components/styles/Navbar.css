@@ -60,6 +60,7 @@
     font-size: 1.4rem;
     cursor: pointer;
     color: #ff6600;
+    gap: 0.5rem;
   }
 
   .close-btn:hover{
@@ -139,3 +140,11 @@
   .cart-button:hover {
     color: #be1414;
   }
+  .sidebar-header h2 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ff6600;
+  }
+  

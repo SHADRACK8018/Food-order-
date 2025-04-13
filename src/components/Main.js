@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './styles/Main.css';
 import MenuCard from './MenuCard';
-import Navbar from './Navbar';
+import Navbar from './Navbar'
+import Footer from './Footer';
 
 const Main = () => {
   const [menuItem, setMenuItems] = useState([]);
@@ -31,6 +32,7 @@ return (
           <MenuCard key={item.id} item={item} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
