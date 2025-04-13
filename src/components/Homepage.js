@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/Homepage.css';
-import LoginSignupForms from './LoginSignupForms' ;
 
 
 const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) => {
@@ -37,15 +37,18 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
   }; 
 
   return (
-    
     <div className="home">
       <div>
         <div className="header">
-        <div className="header-title">BiteGo</div>
-        <div className= "auth-buttons">
-          <button onClick={showLoginForm}>Login</button >
-          <button onClick={showSignUpForm}>Sign Up</button>
-        </div>
+          <div className="header-title">BiteGo</div>
+          <div className="auth-buttons">
+          <Link to="http://localhost:5000/login">
+  <button>Login</button>
+</Link>
+<button onClick={() => window.location.href = 'http://localhost:5000/register'}>Sign Up</button>
+
+
+          </div>
         </div>
       </div>
 
@@ -66,16 +69,8 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
 
         <button onClick={submitAddress}>Add</button >
       </div>
+    </div>
 
-      <LoginSignupForms  
-      showForm={showForm} 
-      closeForm={closeForm}  
-      setShowForm={setShowForm}
-      registeredUser={registeredUser}
-      setRegisteredUser={setRegisteredUser}
-      />
-
-    </div >
   );
 
 };
