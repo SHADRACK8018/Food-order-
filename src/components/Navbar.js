@@ -42,6 +42,9 @@ const Navbar = () => {
         
         <div className='sidebar-body'>
             <ul>
+                <li><FaShoppingBag /> <Link className="menu-item" to="/orders">Orders</Link></li>
+                <li><FaHeart /> <Link className="menu-item" to="/favorites">Favorites</Link></li>
+                <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
                 <li><FaShoppingBag /> <Link className="menu-item" href="/orders">Orders</Link></li>
                 <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
                 <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
