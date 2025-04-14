@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import Help from './components/Help';
 import './styles/Navbar.css';
 import Cart from './Cart'
-import { FaBars, FaSearch, FaShoppingCart,  FaHeart, FaWallet, FaQuestionCircle, FaShoppingBag  } from 'react-icons/fa';
+import { FaBars, FaSearch, FaShoppingCart,  FaHeart, FaWallet, FaQuestionCircle, FaShoppingBag, FaUser   } from 'react-icons/fa';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -42,18 +42,34 @@ const Navbar = () => {
         
         <div className='sidebar-body'>
             <ul>
+                <li><FaShoppingBag /> <Link className="menu-item" to="/orders">Orders</Link></li>
+                <li><FaHeart /> <Link className="menu-item" to="/favorites">Favorites</Link></li>
+                <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
                 <li><FaShoppingBag /> <Link className="menu-item" href="/orders">Orders</Link></li>
                 <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
                 <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
                 <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
+                <li><FaUser  /> <Link className="menu-item" to="http://localhost:5000/account">Account</Link></li>
             </ul>
         </div>
       <div className="sidebar-footer">
-        <button className="signout" onClick={()=>{
-                localStorage.removeItem("user");
-                navigate("/");
-            }
-                }>Sign Out</button>
+        <button
+    className="signout"
+    onClick={() => {
+      fetch("http://localhost:5000/logout", {
+
+      })
+        .then(() => {
+          localStorage.removeItem("user");
+          navigate("/");
+        })
+        .catch((err) => {
+          console.error("Logout failed", err);
+        });
+    }}
+  >
+    Sign Out
+  </button>
        </div>
   
   </div>

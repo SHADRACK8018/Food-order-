@@ -13,6 +13,7 @@ const getDefaultCart = (items) => {
 export const CartContextProvider = ({ children }) => {
     const [menuItems, setMenuItems] = useState([]);
     const [cartItems, setCartItems] = useState({});
+    const [favorites, setFavorite] = useState([]);
     
     useEffect(() => {
         fetch("http://localhost:3001/menu")
@@ -32,7 +33,19 @@ export const CartContextProvider = ({ children }) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1}))
     }
 
-    const contextValue = {cartItems, addtoCart, removefromCart};
+    const toggleFavorite = (item) => {
+        setFavorite(prev => {
+            const exists = prev.find(fav => fav.id === item.id);
+            return exists
+            ? prev.filter(fav => fav.id !== item.id) : [...prev, item];
+        })
+    }
+
+    const isFavorite = (itemId) => {
+        favorites.some(fav => fav.id === itemId); //.some() returns a boolean value true or false when checking if an item is favorite or not
+    }
+
+    const contextValue = {cartItems, addtoCart, removefromCart, favorites, toggleFavorite, isFavorite};
 
     return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
 }
