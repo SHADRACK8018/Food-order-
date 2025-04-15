@@ -15,16 +15,14 @@ BiteGo is a dynamic and user-friendly food ordering application designed to conn
 * **Quick Order Placement:** Hassle-free order placement with a variety of secure payment options.
 * **Real-Time Order Tracking:** Monitor your order's status and delivery progress in real-time.
 * **Personalized Order History:** Easily access past orders and reorder your favorite meals with a single click.
-* **Restaurant Management Dashboard:** (Admin Panel) Comprehensive tools for restaurants to manage their information and menus.
 * **Secure Payment Integration:** Integrated with [Payment Gateway Name, e.g., Stripe] for secure and reliable transactions.
-* **Location-Based Services:** Find restaurants near you and easily input delivery addresses using integrated location services.
-
+  
 ## Architecture
 
 * **Front-End:** React.js (Modern and Responsive UI)
 * **API Gateway:** Node.js (Express.js - High-Performance API Orchestration)
 * **Microservices:** Python (Flask - Specialized Business Logic)
-* **Database:** PostgreSQL (Reliable and Scalable Data Storage)
+* **Database:** mysql (Reliable and Scalable Data Storage)
 
 ## Getting Started
 
@@ -32,9 +30,9 @@ BiteGo is a dynamic and user-friendly food ordering application designed to conn
 
 * Node.js (v16 or higher)
 * Python (v3.8 or higher)
-* PostgreSQL (or your chosen database)
-* npm or yarn (Node.js package managers)
-* pip (Python package manager)
+* mysql
+* npm 
+* pip 
 
 ### Installation
 
