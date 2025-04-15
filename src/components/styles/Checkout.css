@@ -1,0 +1,107 @@
+
+.checkout-page {
+    max-width: 700px;
+    max-height: 1000px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.checkout-page h3{
+    font-weight: 700;
+    font-size: larger;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.mpesa-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+  }
+  
+  .mpesa-form input {
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .mpesa-form button {
+    padding: 0.75rem;
+    background-color: #00c853;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .mpesa-form button:hover {
+    background-color: #009e3d;
+  }
+  .paybill-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    border-radius: 12px;
+  }
+  
+  .paybill-section ol {
+    padding-left: 20px;
+  }
+  
+  .paybill-section input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 280px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin-right: 10px;
+  }
+  
+  .paybill-section button {
+    padding: 10px 20px;
+    background-color: #00c853;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .paybill-section button:hover{
+    background-color: #009e3d;
+  }
+
+  .delivery-form {
+    margin-bottom: 20px;
+  }
+  
+  .delivery-form input,
+  .delivery-form textarea {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    max-width: 400px;
+  }
+.delivery-form input,
+.delivery-form select,
+.delivery-form textarea {
+  display: block;
+  margin-bottom: 12px;
+  padding: 8px;
+  width: 100%;
+  max-width: 450px;
+}
+
+  
+  

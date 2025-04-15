@@ -57,18 +57,7 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
         src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80"
         alt="Delicious Food "
       />
-      
-      <div className="overlay" >
-
-        <input
-          type="text"
-          id="addressInput"
-          placeholder="Enter delivery address"
-
-        />
-
-        <button onClick={submitAddress}>Add</button >
-      </div>
+    
     </div>
 
   );

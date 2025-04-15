@@ -45,9 +45,6 @@ const Navbar = () => {
                 <li><FaShoppingBag /> <Link className="menu-item" to="/orders">Orders</Link></li>
                 <li><FaHeart /> <Link className="menu-item" to="/favorites">Favorites</Link></li>
                 <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
-                <li><FaShoppingBag /> <Link className="menu-item" href="/orders">Orders</Link></li>
-                <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
-                <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
                 <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
                 <li><FaUser  /> <Link className="menu-item" to="http://localhost:5000/account">Account</Link></li>
             </ul>
@@ -68,7 +65,7 @@ const Navbar = () => {
         });
     }}
   >
-    Sign Out
+    Logout
   </button>
        </div>
   
