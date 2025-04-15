@@ -1,6 +1,7 @@
 // Checkout.js
 import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from './CartContext';
+import './styles/Checkout.css';
 
 const Checkout = () => {
   const { cartItems } = useContext(CartContext);
