@@ -7,7 +7,7 @@ from models import db, User
 from forms import RegistrationForm, LoginForm, UpdateAccountForm
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://create-react-app-two-fawn-65.vercel.app/"])
 
 app.config['SECRET_KEY'] = '860161b45d69b1c3a46aef53a0342eabd737bbcf997812f6252a3759defc084b'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
@@ -52,10 +52,12 @@ def login():
             flash('Login unsuccessful. Check your email and password.', 'danger')
     return render_template('login.html', form=form)
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET'])
 def logout():
     logout_user()
     return redirect('http://localhost:3000')
+
+
 
 @app.route('/account', methods=['GET', 'POST'])
 @login_required

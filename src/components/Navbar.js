@@ -46,27 +46,20 @@ const Navbar = () => {
                 <li><FaHeart /> <Link className="menu-item" href="/favorites">Favorites</Link></li>
                 <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
                 <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
-                <li><FaUser  /> <Link className="menu-item" to="http://localhost:5000/account">Account</Link></li>
+                <li><FaUser  />  <a href={`${apiUrl}/account`}>Account</a></li>
             </ul>
         </div>
       <div className="sidebar-footer">
-        <button
-    className="signout"
-    onClick={() => {
-      fetch("http://localhost:5000/logout", {
 
-      })
-        .then(() => {
-          localStorage.removeItem("user");
-          navigate("/");
-        })
-        .catch((err) => {
-          console.error("Logout failed", err);
-        });
-    }}
-  >
-    Sign Out
-  </button>
+        <button
+  className="signout"
+  onClick={() => {
+    localStorage.removeItem("user"); 
+    window.location.href = `${apiUrl}/logout`; 
+  }}
+>
+  SignOut
+</button>
        </div>
   
   </div>

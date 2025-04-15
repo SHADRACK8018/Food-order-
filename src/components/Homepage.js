@@ -2,39 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Homepage.css';
 
+const apiUrl = process.env.REACT_APP_API_URL;
 
-const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) => {
-
-
+const Homepage = () => {
   const submitAddress = () => {
-
-    const address = document.getElementById("addressInput").value ;
-
-
-
-    if (address.trim() === "") {
-
-      alert("Please enter a delivery address.");
-    } else {
-      alert("Order placed! Delivering to: " + address );
-    }
-
+    // Placeholder function for now
+    console.log('Address submitted!');
   };
-
-
-  const showLoginForm = () => {
-
-    setShowForm("login");
-  };
-
-  
-  const showSignUpForm = () => {
-    setShowForm("signup") ;
-
-  };
-  const closeForm = () =>  {
-    setShowForm(null) ;
-  }; 
 
   return (
     <div className="home">
@@ -42,12 +16,12 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
         <div className="header">
           <div className="header-title">BiteGo</div>
           <div className="auth-buttons">
-          <Link to="http://localhost:5000/login">
-  <button>Login</button>
-</Link>
-<button onClick={() => window.location.href = 'http://localhost:5000/register'}>Sign Up</button>
-
-
+            <a href={`${apiUrl}/login`}>
+              <button>Login</button>
+            </a>
+            <button onClick={() => window.location.href = `${apiUrl}/register`}>
+              Sign Up
+            </button>
           </div>
         </div>
       </div>
@@ -55,24 +29,19 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
       <h1>Welcome to BiteGo</h1>
       <img
         src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80"
-        alt="Delicious Food "
+        alt="Delicious Food"
       />
-      
-      <div className="overlay" >
 
+      <div className="overlay">
         <input
           type="text"
           id="addressInput"
           placeholder="Enter delivery address"
-
         />
-
-        <button onClick={submitAddress}>Add</button >
+        <button onClick={submitAddress}>Add</button>
       </div>
     </div>
-
   );
-
 };
 
-export default Homepage ;
+export default Homepage;
