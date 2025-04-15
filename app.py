@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 from config import Config
@@ -21,6 +22,8 @@ app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST', 'localhost')  # Default to lo
 app.config['MYSQL_USER'] = os.getenv('MYSQL_USER', 'root')  # Default to root if not set
 app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD', '')  # Default to empty if not set
 app.config['MYSQL_DB'] = os.getenv('MYSQL_DB', 'food_order_db')  # Default to food_order_db if not set
+
+CORS(app)
 
 # Initialize MySQL
 mysql.init_app(app)  # Initialize mysql with app
@@ -50,3 +53,4 @@ def internal_server_error(e):
 # Run the application
 if __name__ == "__main__":
     app.run(debug=True)
+

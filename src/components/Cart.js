@@ -17,7 +17,7 @@ const Cart = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3001/menu')
+    fetch('http://localhost:5000/api/food')
       .then((res) => res.json())
       .then((data) => {
         setMenuItems(data);
