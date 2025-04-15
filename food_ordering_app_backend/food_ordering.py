@@ -1,10 +1,10 @@
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_user, current_user, logout_user, login_required
 from flask_cors import CORS
 
 from models import db, User
-from forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm, UpdateAccountForm
 
 app = Flask(__name__)
 CORS(app)
@@ -57,10 +57,22 @@ def logout():
     logout_user()
     return redirect('http://localhost:3000')
 
-@app.route('/account')
+@app.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
-    return render_template('account.html')
+    form=UpdateAccountForm()
+    if form.validate_on_submit():
+        current_user.username=form.username.data
+        current_user.email=form.email.data
+        db.session.commit()
+        flash('Account info updated')
+        return redirect(url_for('account'))
+    elif request.method=='GET':
+        form.username.data=current_user.username
+        form.email.data=current_user.email
+
+    image_file=url_for('static', filename='profile_pics/'+ current_user.image_file)
+    return render_template('account.html', image_file=image_file, form=form)
 
 if __name__ == '__main__':
     with app.app_context():
