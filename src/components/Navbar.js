@@ -6,6 +6,7 @@ import './styles/Navbar.css';
 import Cart from './Cart'
 import { FaBars, FaSearch, FaShoppingCart,  FaHeart, FaWallet, FaQuestionCircle, FaShoppingBag, FaUser   } from 'react-icons/fa';
 
+const apiUrl = process.env.REACT_APP_API_URL;
 const Navbar = () => {
   const navigate = useNavigate();
 
