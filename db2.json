@@ -1,0 +1,142 @@
+{
+  "deliveries": [
+    {
+      "id": "1",
+      "address": "123 Main Strt, Nairobi, Kenya",
+      "building_type": "Apartment",
+      "apt_unit_": "Unit 301",
+      "building_name": "Nairobi Heights",
+      "drop_off_option": "Lobby",
+      "custom_drop_off": null,
+      "instructions": "Please call upon arrival.",
+      "payment": {
+        "id": 1,
+        "payment_method": "Mpesa",
+        "account_number": "1234567890",
+        "cvv": null,
+        "payment_status": "Pending",
+        "timestamp": "2025-04-15T12:30:00Z",
+        "transaction_code": "MPESA12345678",
+        "confirmation_message": "Payment confirmed via Mpesa. Transaction Code: MPESA12345678"
+      }
+    },
+    {
+      "id": "2",
+      "address": "456 Odinga Rd, Kisumu, Kenya",
+      "building_type": "House",
+      "apt_unit_": null,
+      "building_name": "Oak House",
+      "drop_off_option": "Porch",
+      "custom_drop_off": "Please leave at the front porch.",
+      "instructions": "Please don't ring the bell.",
+      "payment": {
+        "id": 2,
+        "payment_method": "Card",
+        "account_number": "245678054230",
+        "cvv": "264",
+        "payment_status": "Completed",
+        "timestamp": "2025-04-15T12:45:00Z",
+        "transaction_code": null,
+        "confirmation_message": "Payment confirmed via Card."
+      }
+    },
+    {
+      "id": "3",
+      "address": "789 Kipchoge Str, Eldoret, Kenya",
+      "building_type": "Commercial",
+      "apt_unit_": "Suite 12B",
+      "building_name": "Pine Tower",
+      "drop_off_option": "Reception",
+      "custom_drop_off": null,
+      "instructions": "Leave with the receptionist.",
+      "payment": {
+        "id": 3,
+        "payment_method": "Cash",
+        "account_number": null,
+        "cvv": null,
+        "payment_status": "Pending",
+        "timestamp": "2025-04-15T13:00:00Z",
+        "transaction_code": null,
+        "confirmation_message": "Cash payment is pending."
+      }
+    },
+    {
+      "id": "4",
+      "address": "543, Uhuru Strt, Mombasa, Kenya",
+      "building_type": "Office",
+      "apt_unit_": null,
+      "building_name": "Cedar Tower",
+      "drop_off_option": "Front Desk",
+      "custom_drop_off": null,
+      "instructions": "Leave package with the front desk manager.",
+      "payment": {
+        "id": 4,
+        "payment_method": "Mpesa",
+        "account_number": "0987654321",
+        "cvv": null,
+        "payment_status": "Completed",
+        "timestamp": "2025-04-15T13:30:00Z",
+        "transaction_code": "MPESA23456789",
+        "confirmation_message": "Payment confirmed via Mpesa. Transaction Code: MPESA23454589"
+      }
+    },
+    {
+      "id": "5",
+      "address": "470, Ngina Rd, Nakuru, Kenya",
+      "building_type": "Other",
+      "apt_unit_": "Unit 28",
+      "building_name": "Ruaka Godowns",
+      "drop_off_option": "null",
+      "custom_drop_off": "null.",
+      "instructions": "Call upon arrival, leave package in the designated area.",
+      "payment": {
+        "id": 5,
+        "payment_method": "Card",
+        "account_number": "5555555555554444",
+        "cvv": "456",
+        "payment_status": "CARDFAILED546",
+        "timestamp": "2025-04-15T14:00:00Z",
+        "transaction_code": null,
+        "confirmation_message": "INVALID CVV.Payment failed."
+      }
+    },
+    {
+      "id": "b28d",
+      "address": "e",
+      "building_type": "e",
+      "apt_unit_": "e",
+      "building_name": "e",
+      "drop_off_option": "Leave at door",
+      "custom_drop_off": "",
+      "instructions": "e",
+      "payment": {
+        "payment_method": "Mpesa",
+        "account_number": "0788888888",
+        "cvv": null,
+        "payment_status": "Completed",
+        "timestamp": "2025-04-15T12:05:57.381Z",
+        "transaction_code": "MPESA82C1LFDE",
+        "confirmation_message": "Payment confirmed via Mpesa."
+      }
+    },
+    {
+      "id": "3b3e",
+      "address": "e",
+      "building_type": "e",
+      "apt_unit_": "e",
+      "building_name": "e",
+      "drop_off_option": "Leave at door",
+      "custom_drop_off": "",
+      "instructions": "e",
+      "payment": {
+        "payment_method": "Mpesa",
+        "account_number": "0788888888",
+        "cvv": null,
+        "payment_status": "Completed",
+        "timestamp": "2025-04-15T12:26:30.464Z",
+        "transaction_code": "MPESANL002JWS",
+        "confirmation_message": "Payment confirmed via Mpesa."
+      }
+    }
+  ]
+}

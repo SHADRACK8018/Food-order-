@@ -25,17 +25,20 @@ const Checkout = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:3001/menu')
-      .then((res) => res.json())
-      .then((data) => {
-        setMenuItems(data);
+    fetch('http://localhost:3002/deliveries')
+      .then(res => res.json())
+      .then(data => {
+        console.log("Deliveries from db2.json:", data);
+        setMenuItems(data) ; 
+
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("Failed to fetch menu", err);
+      .catch(err => {
+        console.error("Failed to fetch deliveries", err);
         setLoading(false);
       });
-  }, []) ; 
+  }, []);
+  
 
 
   const checkoutItems = menuItems.filter(item => cartItems[item.id] > 0);
@@ -48,67 +51,79 @@ const Checkout = () => {
 
   const submitDeliveryAndPayment = async () => {
     try {
-      const deliveryRes = await fetch("https://your-backend.com/deliveries", {
+      const deliveryData = {
+        ...delivery,
+        payment: {
+          payment_method: 'Mpesa',
+          account_number: phone,
+          cvv: null,
+          payment_status: 'Completed',
+          timestamp: new Date().toISOString(),
+          transaction_code: 'MPESA' + Math.random().toString(36).substr(2, 8).toUpperCase(),
+          confirmation_message: 'Payment confirmed via Mpesa.'
+        }
+      };
+  
+      const res = await fetch("http://localhost:3002/deliveries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(delivery)
-      }) ;
-
-
-      if (!deliveryRes.ok) throw new Error("Failed to submit delivery");
-
-      const savedDelivery = await deliveryRes.json();
-      const paymentData = {
-        payment_method: 'mpesa',
-        account_number: phone,
-        cvv: '',
-        delivery_id: savedDelivery.id,
-      } ; 
-
-
-      const paymentRes = await fetch("https://your-backend.com/payments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(paymentData)
+        body: JSON.stringify(deliveryData)
       });
-
-      if (!paymentRes.ok) throw new Error("Failed to submit payment");
-
-      const savedPayment = await paymentRes.json();
-      alert(`Payment successful! ${savedPayment.confirmation_message}`);
+  
+      if (!res.ok) throw new Error("Failed to save delivery and payment");
+  
+      const result = await res.json();
+      alert(`Payment successful! ${result.payment.confirmation_message}`);
     } catch (err) {
       console.error(err);
       alert("Something went wrong. Try again.");
     }
-
-  } ;
+  };
+  
 
 
   const handleMpesaPayment = async (e) => {
     e.preventDefault();
-
+  
     if (!phone || !/^07\d{8}$/.test(phone)) {
       alert("Please enter a valid Safaricom number (e.g., 07XXXXXXXX)");
       return;
     }
-
+  
     if (!customerName || !address) {
       alert("Please fill in your name and delivery address.");
       return;
     }
-
+  
     const mpesaPassword = window.prompt("Enter your M-Pesa PIN:");
-
+  
     if (!mpesaPassword || mpesaPassword.length < 4) {
       alert("Invalid PIN. Payment cancelled.");
       return;
     }
-
+  
     await submitDeliveryAndPayment();
-
+  
+    // Simulate successful M-Pesa payment
     alert(`Simulating M-Pesa payment request to ${phone} for KES ${total.toFixed(2)}.\n
-Delivery to: ${customerName}, ${address}\nNotes: ${notes || 'N/A'}`);
+    Delivery to: ${customerName}, ${address}\nNotes: ${notes || 'N/A'}`);
+  
+    // Reset all input fields
+    setPhone('');
+    setCustomerName('');
+    setAddress('');
+    setNotes('');
+    setDelivery({
+      address: '',
+      building_type: '',
+      apt_unit_: '',
+      building_name: '',
+      drop_off_option: '',
+      custom_drop_off: '',
+      instructions: ''
+    });
   };
+  
 
 
   if (loading) return <p>Loading...</p>;

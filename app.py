@@ -32,7 +32,8 @@ mysql.init_app(app)  # Initialize mysql with app
 CORS(app)
 
 # Register Blueprints for API routes
-app.register_blueprint(food_bp, url_prefix='/api/food')
+app.register_blueprint(food_bp) 
+
 app.register_blueprint(order_bp, url_prefix='/api/order')
 
 # Root route for testing the application

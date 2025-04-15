@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from models.food_items import FoodItem
 
-food_bp = Blueprint('food_bp', __name__)
+food_bp = Blueprint('food_bp', __name__, url_prefix='/api/food')
 
 @food_bp.route('/', methods=['POST'])
 def add_food_item():

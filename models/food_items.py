@@ -14,12 +14,25 @@ class FoodItem:
         cur.close()
 
     @staticmethod
+    @staticmethod
     def get_all_food():
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM food_items")
-        food_items = cur.fetchall()
+        rows = cur.fetchall()
         cur.close()
+
+        food_items = []
+        for row in rows:
+            food_items.append({
+                'id': row[0],
+                'name': row[1],
+                'description': row[2],
+                'price': float(row[3]),
+                'image_url': row[4]
+            })
+
         return food_items
+
 
     @staticmethod
     def get_food_by_id(food_id):
