@@ -42,11 +42,11 @@ const Navbar = () => {
         
         <div className='sidebar-body'>
             <ul>
+            <li><FaUser  /> <Link className="menu-item" to="http://localhost:5000/account">Account</Link></li>
                 <li><FaShoppingBag /> <Link className="menu-item" to="/orders">Orders</Link></li>
                 <li><FaHeart /> <Link className="menu-item" to="/favorites">Favorites</Link></li>
                 <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
                 <li><FaQuestionCircle /> <Link className="menu-item" to="/help">Help</Link></li>
-                <li><FaUser  /> <Link className="menu-item" to="http://localhost:5000/account">Account</Link></li>
             </ul>
         </div>
       <div className="sidebar-footer">

@@ -27,3 +27,9 @@ yarn-error.log*
 .env
 .env.build
 .vercel
+
+
+__pycache__/
+*.pyc
+*.pyc
+__pycache__/

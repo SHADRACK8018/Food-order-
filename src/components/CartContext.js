@@ -16,7 +16,7 @@ export const CartContextProvider = ({ children }) => {
     const [favorites, setFavorite] = useState([]);
     
     useEffect(() => {
-        fetch("http://localhost:3001/menu")
+        fetch("http://localhost:5000/api/food")
             .then((res) => res.json())
             .then((data) => {
                 setMenuItems(data);
@@ -42,7 +42,7 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const isFavorite = (itemId) => {
-        favorites.some(fav => fav.id === itemId); //.some() returns a boolean value true or false when checking if an item is favorite or not
+        return favorites.some(fav => fav.id === itemId); //.some() returns a boolean value true or false when checking if an item is favorite or not
     }
 
     const contextValue = {cartItems, addtoCart, removefromCart, favorites, toggleFavorite, isFavorite};

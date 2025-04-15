@@ -1,5 +1,6 @@
 from flask_mysqldb import MySQL
 from config import Config
+import json
 
 mysql = MySQL()
 
@@ -42,3 +43,23 @@ class FoodItem:
         cur.execute("DELETE FROM food_items WHERE id=%s", [food_id])
         mysql.connection.commit()
         cur.close()
+
+    @staticmethod
+    def seed_food_items_from_json():
+        """Seeds food items from the food_data.json file into the database."""
+        # Load food items from the json file
+        with open('food_data.json', 'r') as file:
+            data = json.load(file)
+
+        # Loop through each food item in the data
+        for food in data['food_items']:
+            name = food['name']
+            description = food['description']
+            price = food['price']
+            image_url = food['image_url']
+
+            # Insert each food item into the database
+            FoodItem.add_food(name, description, price, image_url)
+        
+        print(f"Successfully seeded {len(data['food_items'])} food items into the database.")
+
