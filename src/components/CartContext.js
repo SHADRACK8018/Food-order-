@@ -4,8 +4,10 @@ export const CartContext = createContext(null);
 
 const getDefaultCart = (items) => {
     let cart = {};
-    for (let i = 1; i < items.length + 1; i++){
-        cart[i] = 0;
+    for (let item of items) {
+        if (item?.id !== undefined) {
+            cart[item.id] = 0;
+        }
     }
     return cart;
 }
@@ -19,8 +21,10 @@ export const CartContextProvider = ({ children }) => {
         fetch("http://localhost:5000/api/food")
             .then((res) => res.json())
             .then((data) => {
+                console.log("API returned data:", data);
                 setMenuItems(data);
                 setCartItems(getDefaultCart(data));
+                console.log("Cart Items Initialized:", cartItems);
             })
             .catch(err => console.error('Fetch error:', err))
     }, []);
@@ -45,7 +49,7 @@ export const CartContextProvider = ({ children }) => {
         return favorites.some(fav => fav.id === itemId); //.some() returns a boolean value true or false when checking if an item is favorite or not
     }
 
-    const contextValue = {cartItems, addtoCart, removefromCart, favorites, toggleFavorite, isFavorite};
+    const contextValue = {cartItems, addtoCart, removefromCart, favorites, toggleFavorite, isFavorite, menuItems};
 
     return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
 }

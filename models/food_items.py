@@ -19,6 +19,7 @@ class FoodItem:
         cur.execute("SELECT * FROM food_items")
         food_items = cur.fetchall()
         cur.close()
+        
         return food_items
 
     @staticmethod

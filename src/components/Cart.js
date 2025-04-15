@@ -5,15 +5,15 @@ import CartCard from './CartCard';
 import { CartContext } from './CartContext';
 
 const Cart = ({ isOpen, onClose }) => {
-  const navigate = useNavigate(); // ✅ Needed for redirection
+  const navigate = useNavigate();
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { cartItems } = useContext(CartContext);
 
   const handleCheckout = () => {
-    onClose(); // ✅ Closes the cart popup
-    navigate('/checkout'); // ✅ Navigates to your checkout page
+    onClose();
+    navigate('/checkout');
   };
 
   useEffect(() => {
@@ -31,6 +31,11 @@ const Cart = ({ isOpen, onClose }) => {
 
   if (loading) return <p>Loading...</p>;
 
+  // 🔥 Filter items with quantity > 0
+  const cartItemsToDisplay = menuItems.filter(
+    (item) => cartItems[item.id] && cartItems[item.id] > 0
+  );
+
   return (
     <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
       <div className="cart-header">
@@ -39,13 +44,21 @@ const Cart = ({ isOpen, onClose }) => {
       </div>
 
       <div className="cart-body">
-        {menuItems.map(item =>
-          cartItems[item.id] !== 0 ? <CartCard key={item.id} item={item} /> : null
+        {cartItemsToDisplay.length === 0 ? (
+          <p className="empty-cart">Your cart is empty.</p>
+        ) : (
+          cartItemsToDisplay.map((item) => (
+            <CartCard key={item.id} item={item} quantity={cartItems[item.id]} />
+          ))
         )}
       </div>
 
       <div className="cart-footer">
-        <button className="checkout-button" onClick={handleCheckout}>
+        <button
+          className="checkout-button"
+          onClick={handleCheckout}
+          disabled={cartItemsToDisplay.length === 0}
+        >
           Checkout
         </button>
       </div>

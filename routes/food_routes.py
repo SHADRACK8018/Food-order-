@@ -15,14 +15,35 @@ def add_food_item():
 
 @food_bp.route('/', methods=['GET'])
 def get_food_items():
+    print("Getting all food items...")
     food_items = FoodItem.get_all_food()
-    return jsonify(food_items)
+
+    # Convert list of tuples to list of dictionaries
+    formatted_items = [
+        {
+            "id": item[0],
+            "name": item[1],
+            "description": item[2],
+            "price": float(item[3]),  # in case it's Decimal
+            "image_url": item[4]
+        } for item in food_items
+    ]
+    
+    print("Formatted Food Items:", formatted_items)
+    return jsonify(formatted_items)
 
 @food_bp.route('/<int:id>', methods=['GET'])
 def get_food_item(id):
     food_item = FoodItem.get_food_by_id(id)
     if food_item:
-        return jsonify(food_item)
+        formatted_item = {
+            "id": food_item[0],
+            "name": food_item[1],
+            "description": food_item[2],
+            "price": float(food_item[3]),
+            "image_url": food_item[4]
+        }
+        return jsonify(formatted_item)
     else:
         return jsonify({'message': 'Food item not found'}), 404
 
