@@ -6,7 +6,7 @@ from config import Config
 from routes.food_routes import food_bp
 from routes.order_routes import order_bp
 from db import mysql  # Import the mysql object from db.py
-from flask_cors import CORS  # Importing CORS to enable cross-origin resource sharing
+# Importing CORS to enable cross-origin resource sharing
 
 # Load environment variables from .env file
 load_dotenv()
@@ -22,8 +22,6 @@ app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST', 'localhost')  # Default to lo
 app.config['MYSQL_USER'] = os.getenv('MYSQL_USER', 'root')  # Default to root if not set
 app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD', '')  # Default to empty if not set
 app.config['MYSQL_DB'] = os.getenv('MYSQL_DB', 'food_order_db')  # Default to food_order_db if not set
-
-CORS(app)
 
 # Initialize MySQL
 mysql.init_app(app)  # Initialize mysql with app

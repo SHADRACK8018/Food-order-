@@ -1,4 +1,4 @@
-[{
+{
     "order_items": [{
             "id": 1,
             "order_id": 101,
@@ -105,77 +105,78 @@
             "price": 13.50
         }
     ],
-    "food_items": [{
-            "id": 201,
-            "name": "Burger",
-            "description": "Classic beef burger with cheese and toppings",
-            "price": 7.75,
-            "image_url": "/images/burger.jpg"
-        },
-        {
-            "id": 202,
-            "name": "Pizza",
-            "description": "Large pepperoni pizza",
-            "price": 19.99,
-            "image_url": "/images/pizza.jpg"
-        },
-        {
-            "id": 203,
-            "name": "Fries",
-            "description": "Crispy golden french fries",
-            "price": 4.50,
-            "image_url": "/images/fries.jpg"
-        },
-        {
-            "id": 204,
-            "name": "Soda",
-            "description": "Refreshing carbonated beverage",
-            "price": 3.00,
-            "image_url": "/images/soda.jpg"
-        },
-        {
-            "id": 205,
-            "name": "Pasta",
-            "description": "Spaghetti with marinara sauce",
-            "price": 12.99,
-            "image_url": "/images/pasta.jpg"
-        },
-        {
-            "id": 206,
-            "name": "Salad",
-            "description": "Fresh green salad with vinaigrette",
-            "price": 6.50,
-            "image_url": "/images/salad.jpg"
-        },
-        {
-            "id": 207,
-            "name": "Chicken Wings",
-            "description": "Spicy baked chicken wings (6 pieces)",
-            "price": 9.25,
-            "image_url": "/images/wings.jpg"
-        },
-        {
-            "id": 208,
-            "name": "Steak",
-            "description": "Grilled sirloin steak",
-            "price": 23.00,
-            "image_url": "/images/steak.jpg"
-        },
-        {
-            "id": 209,
-            "name": "Ice Cream",
-            "description": "Vanilla ice cream with chocolate sauce",
-            "price": 5.50,
-            "image_url": "/images/icecream.jpg"
-        },
-        {
-            "id": 210,
-            "name": "Coffee",
-            "description": "Brewed black coffee",
-            "price": 3.50,
-            "image_url": "/images/coffee.jpg"
-        }
-    ],
+"food_items": [
+  {
+    "id": 201,
+    "name": "Burger",
+    "description": "Classic beef burger with cheese and toppings",
+    "price": 7.75,
+    "image_url": "https://images.unsplash.com/photo-1550547660-d9450f859349"
+  },
+  {
+    "id": 202,
+    "name": "Pizza",
+    "description": "Large pepperoni pizza",
+    "price": 19.99,
+    "image_url": "https://images.unsplash.com/photo-1601924582975-4c3b6c5c9b91"
+  },
+  {
+    "id": 203,
+    "name": "Fries",
+    "description": "Crispy golden french fries",
+    "price": 4.50,
+    "image_url": "https://images.unsplash.com/photo-1541599540903-216a46ca1f9b"
+  },
+  {
+    "id": 204,
+    "name": "Soda",
+    "description": "Refreshing carbonated beverage",
+    "price": 3.00,
+    "image_url": "https://images.unsplash.com/photo-1600281979565-38b2ec15f1f3"
+  },
+  {
+    "id": 205,
+    "name": "Pasta",
+    "description": "Spaghetti with marinara sauce",
+    "price": 12.99,
+    "image_url": "https://images.unsplash.com/photo-1589308078056-f3b9c8c4f0c5"
+  },
+  {
+    "id": 206,
+    "name": "Salad",
+    "description": "Fresh green salad with vinaigrette",
+    "price": 6.50,
+    "image_url": "https://images.unsplash.com/photo-1551183053-bf91a1d81141"
+  },
+  {
+    "id": 207,
+    "name": "Chicken Wings",
+    "description": "Spicy baked chicken wings (6 pieces)",
+    "price": 9.25,
+    "image_url": "https://images.unsplash.com/photo-1613145991370-960edeb7c845"
+  },
+  {
+    "id": 208,
+    "name": "Steak",
+    "description": "Grilled sirloin steak",
+    "price": 23.00,
+    "image_url": "https://images.unsplash.com/photo-1551189014-8be9a7b1d9c5"
+  },
+  {
+    "id": 209,
+    "name": "Ice Cream",
+    "description": "Vanilla ice cream with chocolate sauce",
+    "price": 5.50,
+    "image_url": "https://images.unsplash.com/photo-1565958011702-44b3223a3c20"
+  },
+  {
+    "id": 210,
+    "name": "Coffee",
+    "description": "Brewed black coffee",
+    "price": 3.50,
+    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+  }
+],
     "orders": [{
             "id": 101,
             "user_id": 1,
@@ -217,4 +218,4 @@
             "total_price": 34.00
         }
     ]
-}]
+}
