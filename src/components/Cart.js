@@ -15,18 +15,25 @@ const Cart = ({ isOpen, onClose }) => {
     onClose();
     navigate('/checkout');
   };
-
+  
   useEffect(() => {
-    fetch('http://localhost:5000/api/food')
+    fetch("http://localhost:5000/api/food")
       .then((res) => res.json())
       .then((data) => {
-        setMenuItems(data);
+        const transformed = data.map(row => ({
+          id: row[0],
+          name: row[1],
+          description: row[2],
+          price: parseFloat(row[3]),
+          image_url: row[4],
+        }));
+  
+        console.log("Transformed Data:", transformed);
+        setMenuItems(transformed);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error('Error fetching menu:', error);
-        setLoading(false);
-      });
+      .catch(err => console.error('Fetch error:', err));
+      setLoading(false);
   }, []);
 
   if (loading) return <p>Loading...</p>;
@@ -57,7 +64,7 @@ const Cart = ({ isOpen, onClose }) => {
         <button
           className="checkout-button"
           onClick={handleCheckout}
-          disabled={cartItemsToDisplay.length === 0}
+          // disabled={cartItemsToDisplay.length === 0}
         >
           Checkout
         </button>

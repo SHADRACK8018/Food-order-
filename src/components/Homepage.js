@@ -49,10 +49,10 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
         <div className="header">
           <div className="header-title">BiteGo</div>
           <div className="auth-buttons">
-          <Link to="http://localhost:5000/login">
+          <Link to="http://localhost:8000/login">
   <button>Login</button>
 </Link>
-<button onClick={() => window.location.href = 'http://localhost:5000/register'}>Sign Up</button>
+<button onClick={() => window.location.href = 'http://localhost:8000/register'}>Sign Up</button>
 
 
           </div>

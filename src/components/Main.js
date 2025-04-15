@@ -12,14 +12,36 @@ const Main = () => {
     fetch("http://localhost:5000/api/food/")
       .then((res) => res.json())
       .then((data) => {
-        setMenuItems(data);
+        const transformed = data.map(row => ({
+          id: row[0],
+          name: row[1],
+          description: row[2],
+          price: parseFloat(row[3]),
+          image_url: row[4],
+        }));
+  
+        console.log("Transformed Data:", transformed);
+        setMenuItems(transformed);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error('Error fetching posts:', error);
-        setLoading(false);
-      });
+      .catch(err => console.error('Fetch error:', err));
+      setLoading(false);
   }, []);
+  
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/api/food")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setMenuItems(data);
+  //       setLoading(false);
+  //       console.log("Items Initialized:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching posts:', error);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   if (loading) return <p>Loading...</p>;
 

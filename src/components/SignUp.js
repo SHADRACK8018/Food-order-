@@ -8,7 +8,7 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/register', {
+    const response = await fetch('http://localhost:8000/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),

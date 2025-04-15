@@ -8,6 +8,7 @@ import Help from './components/Help';
 import Login from './components/Login';
 import Signup from './components/SignUp';
 import Checkout from './components/Checkout';
+import Favorites from './components/Favorites';
 import { CartContextProvider } from './components/CartContext';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/signup" element={<Signup setRegisteredUser={setRegisteredUser} />} />
           <Route path="/landing" element={<Main />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/help" element={<Help />} />
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/checkout" element={<Checkout />} />

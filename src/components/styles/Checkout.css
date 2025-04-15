@@ -2,12 +2,14 @@
 .checkout-page {
     max-width: 700px;
     max-height: 1000px;
+    max-height: 1000px;
     margin: 50px auto;
     padding: 20px 30px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 
 }
 
@@ -26,14 +28,14 @@
     gap: 1rem;
     max-width: 400px;
   }
-  
+
   .mpesa-form input {
     padding: 0.75rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
   }
-  
+
   .mpesa-form button {
     padding: 0.75rem;
     background-color: #00c853;
@@ -43,7 +45,7 @@
     border-radius: 6px;
     cursor: pointer;
   }
-  
+
   .mpesa-form button:hover {
     background-color: #009e3d;
   }
@@ -54,11 +56,11 @@
     background: #f9f9f9;
     border-radius: 12px;
   }
-  
+
   .paybill-section ol {
     padding-left: 20px;
   }
-  
+
   .paybill-section input {
     margin-top: 10px;
     padding: 10px;
@@ -67,12 +69,13 @@
     border: 1px solid #aaa;
     margin-right: 10px;
   }
-  
+
   .paybill-section button {
     padding: 10px 20px;
     background-color: #00c853;
     color: white;
     border: none;
+    border-radius: 6px;
     border-radius: 6px;
     cursor: pointer;
   }
@@ -84,7 +87,7 @@
   .delivery-form {
     margin-bottom: 20px;
   }
-  
+
   .delivery-form input,
   .delivery-form textarea {
     display: block;
