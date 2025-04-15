@@ -11,7 +11,7 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
 
   const submitAddress = () => {
 
-  const address = document.getElementById("addressInput").value ;
+  // const address = document.getElementById("addressInput").value ;
 
 
 
