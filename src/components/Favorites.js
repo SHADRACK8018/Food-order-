@@ -8,7 +8,7 @@ function Favorites() {
 
   return (
     <div className="favorites-container">
-      <h1>❤️ Favorite Items</h1>
+      <h1>Favorite Items</h1>
       {favorites.length === 0 ? (
         <p style={{ textAlign: 'center', color: '#555' }}>No favorite items yet.</p>
       ) : (
