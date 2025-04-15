@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Homepage.css';
+import Login from './Login'
+// import { useNavigate } from 'react-router-dom'
 
 
 const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) => {
 
+  // const navigate = useNavigate();
 
   const submitAddress = () => {
 
-    const address = document.getElementById("addressInput").value ;
+  const address = document.getElementById("addressInput").value ;
 
 
 
@@ -21,20 +24,24 @@ const Homepage = ({ showForm, setShowForm, registeredUser, setRegisteredUser }) 
 
   };
 
+  // const handeClick = () => {
+  //   navigate('/login')
+  // }
 
-  const showLoginForm = () => {
 
-    setShowForm("login");
-  };
+  // const showLoginForm = () => {
+
+  //   setShowForm("login");
+  // };
 
   
-  const showSignUpForm = () => {
-    setShowForm("signup") ;
+  // const showSignUpForm = () => {
+  //   setShowForm("signup") ;
 
-  };
-  const closeForm = () =>  {
-    setShowForm(null) ;
-  }; 
+  // };
+  // const closeForm = () =>  {
+  //   setShowForm(null) ;
+  // }; 
 
   return (
     <div className="home">

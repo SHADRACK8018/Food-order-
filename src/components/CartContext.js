@@ -42,7 +42,7 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const isFavorite = (itemId) => {
-        favorites.some(fav => fav.id === itemId); //.some() returns a boolean value true or false when checking if an item is favorite or not
+        return favorites.some(fav => fav.id === itemId); //.some() returns a boolean value true or false when checking if an item is favorite or not
     }
 
     const contextValue = {cartItems, addtoCart, removefromCart, favorites, toggleFavorite, isFavorite};

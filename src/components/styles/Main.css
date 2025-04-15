@@ -70,8 +70,10 @@ body {
 }
 
 .favorite {
-  background-color: #f5f5f5;
-  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 .navbar {

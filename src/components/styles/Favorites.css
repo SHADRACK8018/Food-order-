@@ -1,47 +1,85 @@
-.help-container {
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 20px 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .help-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .help-section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-  }
-  
-  .help-section h3 {
-    font-size: 18px;
-    cursor: pointer;
-    color: #444;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s ease;
-  }
-  
-  .help-section h3:hover {
-    color: #007bff;
-  }
-  
-  .help-section ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-top: 10px;
-    color: #555;
-  }
-  
-  .help-section ul li {
-    margin-bottom: 8px;
-  }
-  
+.favorites-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.favorites-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.favorite-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.favorite-item:last-child {
+  border-bottom: none;
+}
+
+.favorite-item img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favorite-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.favorite-title {
+  font-size: 20px;
+  color: #222;
+  font-weight: bold;
+}
+
+.favorite-description {
+  color: #555;
+}
+
+.favorite-price {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.favorite-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.favorite-buttons button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.favorite-buttons .add {
+  background-color: #28a745;
+  color: white;
+}
+
+.favorite-buttons .remove {
+  background-color: #dc3545;
+  color: white;
+}
+
+.favorite-buttons .heart {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+}
