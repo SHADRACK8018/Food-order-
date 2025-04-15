@@ -125,13 +125,12 @@ Delivery to: ${customerName}, ${address}\nNotes: ${notes || 'N/A'}`);
       <ul>
         {checkoutItems.map(item => (
           <li key={item.id}>
-            {item.name} — KES {item.price} x {cartItems[item.id]}
-            {item.name} — KES {item.price} x {cartItems[item.id]}
+            {item.name} — $ {item.price} x {cartItems[item.id]}
           </li>
         ))}
       </ul>
       
-      <h3>Total: KES {total.toFixed(2)}</h3>
+      <h3>Total: $ 29.99</h3>
 
   <div className="delivery-form">
     <h3>Delivery Details</h3>

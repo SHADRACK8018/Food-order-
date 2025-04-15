@@ -61,7 +61,7 @@ const Navbar = () => {
       </div>
       <div className="sidebar-body">
         <ul>
-          <li><FaUser /> <Link className="menu-item" to="/account">Account</Link></li>
+          <li><FaUser /> <Link className="menu-item" to="http://localhost:8000/account">Account</Link></li>
           <li><FaShoppingBag /> <Link className="menu-item" to="/orders">Orders</Link></li>
           <li><FaHeart /> <Link className="menu-item" to="/favorites">Favorites</Link></li>
           <li><FaWallet /> <Link className="menu-item" to="/wallet">Wallet</Link></li>
