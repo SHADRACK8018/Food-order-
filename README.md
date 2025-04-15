@@ -15,7 +15,7 @@ BiteGo is a dynamic and user-friendly food ordering application designed to conn
 * **Quick Order Placement:** Hassle-free order placement with a variety of secure payment options.
 * **Real-Time Order Tracking:** Monitor your order's status and delivery progress in real-time.
 * **Personalized Order History:** Easily access past orders and reorder your favorite meals with a single click.
-* **Secure Payment Integration:** Integrated with [Payment Gateway Name, e.g., Stripe] for secure and reliable transactions.
+* **Secure Payment Integration:** Integrated with payment gateway. for secure and reliable transactions.
   
 ## Architecture
 
